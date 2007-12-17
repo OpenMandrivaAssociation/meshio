@@ -14,7 +14,6 @@ License:     LGPL
 Group:       System/Libraries
 Source:      meshio-%version.tar.bz2
 URL:         http://www.3dwm.org/frameset.html
-BuildRoot:   %_tmppath/%{name}-buildroot
 
 %description 
 MeshIO is a simple C++ library for the loading of 3D model 

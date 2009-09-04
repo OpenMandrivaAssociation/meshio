@@ -1,5 +1,5 @@
 %define version 0.2.0
-%define release %mkrel 9
+%define release %mkrel 10
 %define name    meshio
 
 %define major 0

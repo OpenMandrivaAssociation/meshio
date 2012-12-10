@@ -1,0 +1,11 @@
+--- src/load.cc.orig        2000-08-10 12:59:22.000000000 +0200
++++ src/load.cc     2012-11-24 14:16:08.000000000 +0100
+@@ -43,7 +43,7 @@
+ 
+ mioResult MeshIO::mioLoad(const char *filename, MeshSet *mset)
+ {
+-    char *suffix;
++    const char *suffix;
+ 
+     // Find the last period in the string
+     suffix = strrchr(filename, '.');

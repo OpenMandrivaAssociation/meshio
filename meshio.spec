@@ -1,5 +1,6 @@
+%define debug_package %{nil}
 %define version 0.2.0
-%define release %mkrel 10
+%define release 9
 %define name    meshio
 
 %define major 0
@@ -10,11 +11,13 @@ Name:        %{name}
 Summary:     Library for the loading of 3D model files
 Version:     %{version}
 Release:     %{release}
-License:     LGPL
+License:     LGPLv2.1
 Group:       System/Libraries
 Source:      meshio-%version.tar.bz2
+Patch0:      meshio-0.2.0-build.patch
+
 URL:         http://www.3dwm.org/frameset.html
-BuildRoot:   %_tmppath/%{name}-buildroot
+
 
 %description 
 MeshIO is a simple C++ library for the loading of 3D model 
@@ -47,38 +50,25 @@ redesign in the future.
 
 
 %prep
-rm -rf $RPM_BUILD_ROOT
-
 %setup -n meshio-%version
+%patch0 -p0
 
 %build
 
-%configure 
-
+linux32 ./configure 
 %make
 
 %install
-
 %makeinstall
 
-%if %mdkversion < 200900
-%post -n %libname -p /sbin/ldconfig
-%endif
 
-%if %mdkversion < 200900
-%postun -n %libname -p /sbin/ldconfig
-%endif
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files -n %libname
-%defattr(-,root,root)
-%doc AUTHORS COPYING INSTALL README  
+%doc AUTHORS COPYING README  
 %_libdir/*.so.*
 
 %files -n %libname-devel
-%defattr(-,root,root)
+%doc AUTHORS COPYING README
 %_libdir/*.*a
 %_libdir/*.so
 %_includedir/MeshIO/

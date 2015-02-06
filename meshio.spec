@@ -1,6 +1,6 @@
 %define debug_package %{nil}
 %define version 0.2.0
-%define release 9
+%define release 10
 %define name    meshio
 
 %define major 0

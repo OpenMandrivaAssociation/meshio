@@ -16,7 +16,7 @@ Group:       System/Libraries
 Source:      meshio-%version.tar.bz2
 Patch0:      meshio-0.2.0-build.patch
 
-URL:         http://www.3dwm.org/frameset.html
+URL:         https://www.3dwm.org/frameset.html
 
 
 %description 
